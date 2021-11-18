@@ -4,10 +4,8 @@ using OnCourse.Domo.Sdk.Groups;
 
 namespace OnCourse.Domo.Sdk.Users
 {
-    public class User
+    public class User : DomoModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
         public string Email { get; set; }
         public string Role { get; set; }
         public string Title { get; set; }
@@ -18,6 +16,6 @@ namespace OnCourse.Domo.Sdk.Users
         public string Image { get; set; }
         public DateTime Locale { get; set; }
         //public string EmployeeNumber { get; set; }
-        public List<GroupBase> Groups { get; set; }
+        public List<DomoModel> Groups { get; set; }
     }
 }

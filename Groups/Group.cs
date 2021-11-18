@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace OnCourse.Domo.Sdk.Groups
 {
-    public class Group : GroupBase
+    public class Group : DomoModel
     {
         public bool Default { get; set; }
         public bool Active { get; set; }
