@@ -1,21 +1,25 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# name is used when setting the versionScheme to 'byBuildNumber' during the pack
+name: $(majorMinorVersion).$(semanticVersion) # $(rev:r) # NOTE: rev resets when retention policy expires
 
 trigger:
 - master
 
 pool: 'Default'
 
+variables:
+  majorMinorVersion: 1.1
+  # semanticVersion counter is automatically incremented by one in each execution of pipeline
+  # second parameter is seed value to reset to every time the referenced majorMinorVersion is changed
+  semanticVersion: $[counter(variables['majorMinorVersion'], 0)]
+
 steps:
+- task: NuGetAuthenticate@0
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
-    majorVersion: '$(Major)'
-    minorVersion: '$(Minor)'
-    patchVersion: '$(Patch)'
+    versioningScheme: byBuildNumber # https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=azure-devops#yaml-snippet
 
 - task: DotNetCoreCLI@2
   inputs:
