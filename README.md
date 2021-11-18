@@ -4,9 +4,17 @@ Domo API library helps to generate requests for following services:
 
  * groups
  * users
- * pages (not implemented yet)
- * streams (not implemented yet)
- * datasets (not implemented yet)
+ * datasets
+ * accounts*
+ * activity*
+ * pages*
+ * streams*
+ * projects and tasks*
+
+_* Not implemented in current version of the SDK_
+ 
+#### Domo SDK Documentation Website
+https://developer.domo.com/
 
 ## Installation
 
