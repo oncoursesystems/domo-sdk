@@ -16,7 +16,7 @@ namespace OnCourse.Domo.Sdk.Groups
         /// </summary>
         /// <param name="group"></param>
         /// <returns>Boolean whether method is successful</returns>
-        Task<bool> CreateGroupAsync(Group group);
+        Task<Group> CreateGroupAsync(Group group);
         /// <summary>
         /// Updates an existing group
         /// </summary>

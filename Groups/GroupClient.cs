@@ -42,7 +42,7 @@ namespace OnCourse.Domo.Sdk.Groups
         /// </summary>
         /// <param name="group"></param>
         /// <returns>Boolean whether method is successful</returns>
-        public async Task<bool> CreateGroupAsync(Group group)
+        public async Task<Group> CreateGroupAsync(Group group)
         {
             string groupUri = $"v1/groups";
             _domoHttpClient.SetAcceptRequestHeaders("application/json");
@@ -50,7 +50,8 @@ namespace OnCourse.Domo.Sdk.Groups
             StringContent content = new StringContent(groupJson, Encoding.UTF8, "application/json");
 
             var response = await _domoHttpClient.Client.PostAsync(groupUri, content);
-            return response.IsSuccessStatusCode;
+            groupJson = await response.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<Group>(groupJson, _serializerOptions);
         }
 
         /// <summary>
