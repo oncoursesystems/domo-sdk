@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OnCourse.Domo.Sdk.Groups
+namespace Domo.Groups
 {
     public interface IGroupClient
     {

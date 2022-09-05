@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace OnCourse.Domo.Sdk.Groups
+namespace Domo.Groups
 {
     public class GroupClient : IGroupClient
     {
@@ -46,7 +46,7 @@ namespace OnCourse.Domo.Sdk.Groups
         {
             string groupUri = $"v1/groups";
             _domoHttpClient.SetAcceptRequestHeaders("application/json");
-            string groupJson = JsonSerializer.Serialize(group, _serializerOptions);
+            string groupJson = JsonSerializer.Serialize(new { name = group.Name }, _serializerOptions);
             StringContent content = new StringContent(groupJson, Encoding.UTF8, "application/json");
 
             var response = await _domoHttpClient.Client.PostAsync(groupUri, content);
@@ -93,7 +93,7 @@ namespace OnCourse.Domo.Sdk.Groups
         /// <returns>A list of groups</returns>
         public async Task<IEnumerable<Group>> ListGroupsAsync(int offset, int limit)
         {
-            if (limit < 0 || limit > 500) throw new ArgumentOutOfRangeException("limit", $"List limit {limit} cannot be used. Use a limit value between 1 and 500");
+            if (limit < 1 || limit > 500) throw new ArgumentOutOfRangeException("limit", $"List limit {limit} cannot be used. Use a limit value between 1 and 500");
 
             string groupUri = $"v1/groups?offset={offset}&limit={limit}";
             _domoHttpClient.SetAcceptRequestHeaders("application/json");
@@ -128,7 +128,7 @@ namespace OnCourse.Domo.Sdk.Groups
         /// <returns>A list of user Ids</returns>
         public async Task<IEnumerable<int>> ListUsersAsync(int groupId, int offset, int limit)
         {
-            if (limit < 0 || limit > 500) throw new ArgumentOutOfRangeException("limit", $"List limit {limit} cannot be used. Use a limit value between 1 and 500");
+            if (limit < 1 || limit > 500) throw new ArgumentOutOfRangeException("limit", $"List limit {limit} cannot be used. Use a limit value between 1 and 500");
 
             string groupUri = $"v1/groups/{groupId}/users?offset={offset}&limit={limit}";
             _domoHttpClient.SetAcceptRequestHeaders("application/json");

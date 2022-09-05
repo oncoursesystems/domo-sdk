@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace OnCourse.Domo.Sdk
+namespace Domo
 {
     public class DomoHttpClient
     {
@@ -46,7 +46,7 @@ namespace OnCourse.Domo.Sdk
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(clientCreds));
-                var tokenUrl = $"{_config.ApiHost.AbsoluteUri}/oauth/token?grant_type=client_credentials&scope={authScope}";
+                var tokenUrl = $"{_config.ApiHost.AbsoluteUri}oauth/token?grant_type=client_credentials&scope={authScope}";
                 var response = await client.PostAsync(tokenUrl, new FormUrlEncodedContent(new[] { new KeyValuePair<string, string>("", "") }));
 
                 var jsonResponse = await response.Content.ReadAsStringAsync();

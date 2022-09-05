@@ -1,6 +1,6 @@
 using System;
 
-namespace OnCourse.Domo.Sdk
+namespace Domo
 {
     public class DomoConfig : IDomoConfig
     {

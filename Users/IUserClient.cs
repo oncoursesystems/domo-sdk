@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OnCourse.Domo.Sdk.Users
+namespace Domo.Users
 {
     /// <summary>
     /// https://developer.domo.com/docs/users-api-reference/users-2
@@ -12,7 +12,7 @@ namespace OnCourse.Domo.Sdk.Users
         /// Retrieves the details of an existing user.
         /// </summary>
         /// <param name="userId">The ID of the user</param>
-        /// <returns>Returns a Domo User. <see cref="OnCourse.Domo.Sdk.Users.User"/></returns>
+        /// <returns>Returns a Domo User. <see cref="Domo.Users.User"/></returns>
         Task<User> RetrieveUserAsync(long userId);
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace OnCourse.Domo.Sdk.Users
 		/// </summary>
 		/// <param name="user">Properties and values for the user being created</param>
 		/// <param name="sendInvite">Whether or not to send a "You Just Got Domo'd!" invitation email to new user</param>
-		/// <returns>Returns the created Domo User. <see cref="OnCourse.Domo.Sdk.Users.User"/></returns>
+		/// <returns>Returns the created Domo User. <see cref="Domo.Users.User"/></returns>
         Task<User> CreateUserAsync(User user, bool sendInvite);
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace OnCourse.Domo.Sdk.Users
         /// </summary>
         /// <param name="limit">Max number of users to return. Maximum amount of users to return is 500.</param>
         /// <param name="offset">Offset of users to begin the list of users from.</param>
-        /// <returns>Returns a list of Domo Users. <see cref="OnCourse.Domo.Sdk.Users.User"/></returns>
+        /// <returns>Returns a list of Domo Users. <see cref="Domo.Users.User"/></returns>
         Task<IEnumerable<User>> ListUsersAsync(long limit = 50, long offset = 0);
     }
 }

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace OnCourse.Domo.Sdk.DataSets
+namespace Domo.DataSets
 {
     public class QueryDataSetResult
     {

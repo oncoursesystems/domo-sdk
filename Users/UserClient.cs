@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace OnCourse.Domo.Sdk.Users
+namespace Domo.Users
 {
     public class UserClient : IUserClient
     {
@@ -27,7 +27,7 @@ namespace OnCourse.Domo.Sdk.Users
         /// Retreives a given Domo User by User Id
         /// </summary>
         /// <param name="userId">Id of user to retreive</param>
-        /// <returns>Returns a Domo User. <see cref="OnCourse.Domo.Sdk.Users.User"/></returns>
+        /// <returns>Returns a Domo User. <see cref="Domo.Users.User"/></returns>
         public async Task<User> RetrieveUserAsync(long userId)
         {
             string userUri = $"v1/users/{userId}";
@@ -43,7 +43,7 @@ namespace OnCourse.Domo.Sdk.Users
         /// </summary>
         /// <param name="user">Properties and values for the user being created</param>
         /// <param name="sendInvite">Whether or not to send a "You Just Got Domo'd!" invitation email to new user</param>
-        /// <returns>Returns the created Domo User. <see cref="OnCourse.Domo.Sdk.Users.User"/></returns>
+        /// <returns>Returns the created Domo User. <see cref="Domo.Users.User"/></returns>
         public async Task<User> CreateUserAsync(User user, bool sendInvite)
         {
             string userId = $"v1/users?sendInvite={sendInvite}";
@@ -90,10 +90,10 @@ namespace OnCourse.Domo.Sdk.Users
         /// </summary>
         /// <param name="limit">Max number of users to return. Maximum amount of users to return is 500.</param>
         /// <param name="offset">Offset of users to begin the list of users from.</param>
-        /// <returns>Returns a list of Domo Users. <see cref="OnCourse.Domo.Sdk.Users.User"/></returns>
+        /// <returns>Returns a list of Domo Users. <see cref="Domo.Users.User"/></returns>
         public async Task<IEnumerable<User>> ListUsersAsync(long offset, long limit = 50)
         {
-            if (limit < 0 || limit > 500) throw new ArgumentOutOfRangeException("limit", $"List limit {limit} cannot be used. Use a limit value between 1 and 500");
+            if (limit < 1 || limit > 500) throw new ArgumentOutOfRangeException("limit", $"List limit {limit} cannot be used. Use a limit value between 1 and 500");
 
             string userUri = $"v1/users?limit={limit}&offset={offset}";
             _domoHttpClient.SetAcceptRequestHeaders("application/json");

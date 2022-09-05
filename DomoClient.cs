@@ -1,8 +1,8 @@
-using OnCourse.Domo.Sdk.DataSets;
-using OnCourse.Domo.Sdk.Groups;
-using OnCourse.Domo.Sdk.Users;
+using Domo.DataSets;
+using Domo.Groups;
+using Domo.Users;
 
-namespace OnCourse.Domo.Sdk
+namespace Domo
 {
     public class DomoClient
     {

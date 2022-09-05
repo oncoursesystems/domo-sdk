@@ -1,4 +1,4 @@
-# Domo API SDK (OnCourse.Domo.Sdk) - .NET Standard 2.0
+# Domo API SDK - .NET Standard 2.0
 
 Domo API library helps to generate requests for following services:
 
@@ -20,9 +20,9 @@ https://developer.domo.com/
 
 This project is a class library built for compatibility with .NET Standard 2.0.  It has no external dependencies.
 
-To install the OnCourse.Domo.Sdk NuGet package, run the following command in the Package Manager Console
+To install the Domo NuGet package, run the following command in the Package Manager Console
 ```
-PM> Install-Package OnCourse.Domo.Sdk
+PM> Install-Package Domo
 ```
 
 ##  Usage

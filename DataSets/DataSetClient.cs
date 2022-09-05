@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace OnCourse.Domo.Sdk.DataSets
+namespace Domo.DataSets
 {
     public class DataSetClient : IDataSetClient
     {
@@ -30,7 +30,7 @@ namespace OnCourse.Domo.Sdk.DataSets
         /// <returns>
         /// Returns a DataSet object if valid DataSet ID was provided. When requesting, if the DataSet ID 
         /// is related to a DataSet that has been deleted, a subset of the DataSet's information will be returned, 
-        /// including a deleted property, which will be true. <see cref="OnCourse.Domo.Sdk.DataSets.DataSet"/>
+        /// including a deleted property, which will be true. <see cref="Domo.DataSets.DataSet"/>
         /// </returns>
         public async Task<DataSet> RetrieveDataSetAsync(string dataSetId)
         {
@@ -46,7 +46,7 @@ namespace OnCourse.Domo.Sdk.DataSets
         /// Creates a new DataSet in your Domo instance. Once the DataSet has been created, data can then be imported into the DataSet.
         /// </summary>
         /// <param name="dataSet">Properties and values for the dataset being created</param>
-        /// <returns>Returns a DataSet object when successful. <see cref="OnCourse.Domo.Sdk.DataSets.DataSet"/></returns>
+        /// <returns>Returns a DataSet object when successful. <see cref="Domo.DataSets.DataSet"/></returns>
         public async Task<DataSet> CreateDataSetAsync(DataSet dataSet)
         {
             string uri = $"v1/datasets";
@@ -63,7 +63,7 @@ namespace OnCourse.Domo.Sdk.DataSets
         /// </summary>
         /// <param name="dataSetId">The ID of the DataSet.</param>
         /// <param name="dataSet">Domo User Info to update to.</param>
-        /// <returns>Returns a full DataSet object. <see cref="OnCourse.Domo.Sdk.DataSets.DataSet"/></returns>
+        /// <returns>Returns a full DataSet object. <see cref="Domo.DataSets.DataSet"/></returns>
         public async Task<DataSet> UpdateDataSetAsync(string dataSetId, DataSet dataSet)
         {
             string uri = $"v1/datasets/{dataSetId}";
@@ -117,10 +117,10 @@ namespace OnCourse.Domo.Sdk.DataSets
         /// <param name="sort">The DataSet field to sort by. Fields prefixed with a negative sign reverses the sort (i.e. '-name' does a reverse sort by the name of the DataSets).</param>
         /// <param name="limit">The amount of DataSet to return in the list. The default is 50 and the maximum is 50..</param>
         /// <param name="offset">The offset of the DataSet ID to begin list of users within the response.</param>
-        /// <returns>Returns all DataSet objects that meet argument criteria from original request. <see cref="OnCourse.Domo.Sdk.DataSets.DataSet"/></returns>
-        public async Task<IEnumerable<DataSet>> ListDataSetsAsync(string sort, long limit = 50, long offset = 0)
+        /// <returns>Returns all DataSet objects that meet argument criteria from original request. <see cref="Domo.DataSets.DataSet"/></returns>
+        public async Task<IEnumerable<DataSet>> ListDataSetsAsync(string sort, long offset = 0, long limit = 50)
         {
-            if (limit < 0 || limit > 50) throw new ArgumentOutOfRangeException("limit", $"List limit {limit} cannot be used. Use a limit value between 1 and 50");
+            if (limit < 1 || limit > 50) throw new ArgumentOutOfRangeException("limit", $"List limit {limit} cannot be used. Use a limit value between 1 and 50");
 
             string uri = $"v1/datasets?limit={limit}&offset={offset}&sort={sort}";
             _domoHttpClient.SetAcceptRequestHeaders("application/json");
@@ -169,7 +169,7 @@ namespace OnCourse.Domo.Sdk.DataSets
         /// <param name="pdpId">The ID of the PDP policy to download data</param>
         /// <param name="dataSetId">The ID of the DataSet associated to the PDP policy</param>
         /// <returns>
-        /// Returns a subset of the DataSet object specific to the data permission policy. <see cref="OnCourse.Domo.Sdk.DataSets.Policy"/>
+        /// Returns a subset of the DataSet object specific to the data permission policy. <see cref="Domo.DataSets.Policy"/>
         /// </returns>
         public async Task<Policy> RetrievePolicyAsync(long pdpId, string dataSetId)
         {
@@ -186,7 +186,7 @@ namespace OnCourse.Domo.Sdk.DataSets
         /// </summary>
         /// <param name="dataSetId">The ID of the DataSet associated to the PDP policy.</param>
         /// <param name="policy">Properties and values for the policy being created</param>
-        /// <returns>Returns a subset of the DataSet object specific to the data permission policy. <see cref="OnCourse.Domo.Sdk.DataSets.Policy"/></returns>
+        /// <returns>Returns a subset of the DataSet object specific to the data permission policy. <see cref="Domo.DataSets.Policy"/></returns>
         public async Task<Policy> CreatePolicyAsync(string dataSetId, Policy policy)
         {
             string uri = $"v1/datasets/{dataSetId}/policies";
@@ -204,7 +204,7 @@ namespace OnCourse.Domo.Sdk.DataSets
         /// <param name="pdpId">The ID of the PDP policy to download data.</param>
         /// <param name="dataSetId">The ID of the DataSet associated to the PDP policy.</param>
         /// <param name="policy">Domo Policy to update to.</param>
-        /// <returns>Returns a full Policy object. <see cref="OnCourse.Domo.Sdk.DataSets.Policy"/></returns>
+        /// <returns>Returns a full Policy object. <see cref="Domo.DataSets.Policy"/></returns>
         public async Task<Policy> UpdatePolicyAsync(long pdpId, string dataSetId, Policy policy)
         {
             string uri = $"v1/datasets/{dataSetId}/policies/{pdpId}";
@@ -235,7 +235,7 @@ namespace OnCourse.Domo.Sdk.DataSets
         /// List the Personalized Data Permission (PDP) policies for a specified DataSet.
         /// </summary>
         /// <param name="dataSetId">The ID of the DataSet associated to the PDP policy.</param>
-        /// <returns>Returns all PDP policies that are applied to the DataSet specified in request. <see cref="OnCourse.Domo.Sdk.DataSets.Policy"/></returns>
+        /// <returns>Returns all PDP policies that are applied to the DataSet specified in request. <see cref="Domo.DataSets.Policy"/></returns>
         public async Task<IEnumerable<Policy>> ListPoliciesAsync(string dataSetId)
         {
             string uri = $"v1/datasets/{dataSetId}/policies";

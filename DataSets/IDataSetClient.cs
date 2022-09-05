@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OnCourse.Domo.Sdk.DataSets
+namespace Domo.DataSets
 {
     public interface IDataSetClient
     {
@@ -11,7 +11,7 @@ namespace OnCourse.Domo.Sdk.DataSets
         Task<bool> DeletePolicyAsync(long pdpId, string dataSetId);
         Task<string> ExportDataAsync(string dataSetId, bool includeHeader, string fileName);
         Task<bool> ImportDataAsync(string dataSetId, string data);
-        Task<IEnumerable<DataSet>> ListDataSetsAsync(string sort, long limit = 50, long offset = 0);
+        Task<IEnumerable<DataSet>> ListDataSetsAsync(string sort, long offset = 0, long limit = 50);
         Task<IEnumerable<Policy>> ListPoliciesAsync(string dataSetId);
         Task<DataSet> RetrieveDataSetAsync(string dataSetId);
         Task<Policy> RetrievePolicyAsync(long pdpId, string dataSetId);

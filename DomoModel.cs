@@ -1,4 +1,4 @@
-namespace OnCourse.Domo.Sdk
+namespace Domo
 {
     public class DomoModel
     {

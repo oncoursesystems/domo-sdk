@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>OnCourse.Domo</PackageId>
+    <PackageId>Domo</PackageId>
     <Authors>OnCourse Systems For Education</Authors>
     <Description>Domo API Client</Description>
   </PropertyGroup>

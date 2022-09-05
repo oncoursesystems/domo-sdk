@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 
-namespace OnCourse.Domo.Sdk.DataSets
+namespace Domo.DataSets
 {
     public class DataSet
     {
         public string Id { get; set; }  // this is a string guid for DataSets
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<DomoModel> Owner { get; set; }
+        public DomoModel Owner { get; set; }
         public int Columns { get; set; }
         public string CreatedAt { get; set; }
         public string UpdatedAt { get; set; }
