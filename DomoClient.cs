@@ -1,5 +1,6 @@
 using Domo.DataSets;
 using Domo.Groups;
+using Domo.Pages;
 using Domo.Users;
 
 namespace Domo
@@ -14,10 +15,12 @@ namespace Domo
             Groups = new GroupClient(_config);
             Users = new UserClient(_config);
             DataSets = new DataSetClient(_config);
+            Pages = new PageClient(_config);
         }
 
         public IGroupClient Groups { get; set; }
         public IUserClient Users { get; set; }
         public IDataSetClient DataSets { get; set; }
+        public IPageClient Pages { get; set; }
     }
 }
