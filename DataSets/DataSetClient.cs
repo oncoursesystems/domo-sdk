@@ -9,8 +9,8 @@ namespace Domo.DataSets
 {
     public class DataSetClient : IDataSetClient
     {
-        private DomoHttpClient _domoHttpClient;
-        private JsonSerializerOptions _serializerOptions;
+        private readonly DomoHttpClient _domoHttpClient;
+        private readonly JsonSerializerOptions _serializerOptions;
 
         public DataSetClient(IDomoConfig config)
         {

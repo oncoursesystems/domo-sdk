@@ -90,7 +90,7 @@ namespace Domo.Pages
         /// <param name="limit">Limit of pages to return. Limit is 50.</param>
         /// <param name="offset">Offset of Pages to start retrieving from.</param>
         /// <returns>List of pages</returns>
-        public async Task<IEnumerable<Page>> ListPagesAsync(int limit, int offset)
+        public async Task<IEnumerable<Page>> ListPagesAsync(long offset = 0, long limit = 50)
         {
             string pageUri = $"v1/pages?offset={offset}&limit={limit}";
             _domoHttpClient.SetAcceptRequestHeaders("application/json");

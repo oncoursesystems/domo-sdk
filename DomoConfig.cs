@@ -13,16 +13,13 @@ namespace Domo
     [Flags]
     public enum DomoAuthScope
     {
-        None,
-
-        /// <summary>
-        /// Import and export data
-        /// </summary>
-        Data,
-
-        /// <summary>
-        /// Create/Edit Users and Groups
-        User,
-
+        None = 0,
+        Data = 1,
+        User = 2,
+        Dashboard = 4,
+        Audit = 8,
+        Workflow = 16,
+        Account = 32,
+        All = Data | User | Dashboard | Audit | Workflow | Account
     }
 }

@@ -39,7 +39,7 @@ namespace Domo.Pages
         /// <param name="limit">Limit of pages to return. Limit is 50.</param>
         /// <param name="offset">Offset of Pages to start retrieving from.</param>
         /// <returns>List of pages</returns>
-        Task<IEnumerable<Page>> ListPagesAsync(int limit, int offset);
+        Task<IEnumerable<Page>> ListPagesAsync(long offset = 0, long limit = 50);
         /// <summary>
         /// Retrives a page collection from a page Id
         /// </summary>
