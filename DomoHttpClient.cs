@@ -30,12 +30,6 @@ namespace OnCourse.Domo
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", _authToken.Token);
         }
 
-        private async Task GetAuthToken()
-        {
-            await GetDomoAuthAsync();
-            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", _authToken.Token);
-        }
-
         private async Task GetDomoAuthAsync()
         {
             using (var client = new HttpClient())
