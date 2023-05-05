@@ -7,7 +7,7 @@ Domo API library helps to generate requests for following services:
  * datasets
  * accounts*
  * activity*
- * pages*
+ * pages
  * streams*
  * projects and tasks*
 
@@ -23,16 +23,17 @@ This project is a class library built for compatibility with .NET Standard 2.0. 
 To install the Domo NuGet package, run the following command in the Package Manager Console
 ```
 PM> Install-Package Domo
-```
 
-##  Usage
+## General Usage
 
-## Initialize Client
+Check the developer website for the list of available endpoints
+
 ```Csharp
 var config = new DomoConfig()
 {
     ClientId = "{Your Domo Client App Id}",
     ClientSecret = "{Your Domo Client App Secret}"
 };
-var domo = new DomoClient(config);
+var client = new DomoClient(config);
+var groups = await client.Groups.ListGroupsAsync(offset, 50);
 ```

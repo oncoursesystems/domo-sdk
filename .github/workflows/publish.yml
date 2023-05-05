@@ -1,0 +1,27 @@
+name: Publish Package
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: |
+          6.0.x
+          7.0.x
+
+    - name: Build NuGet Package
+      run: dotnet pack -c Release -p:PackageVersion=${{  github.ref_name }}
+
+    - name: Publish NuGet Package
+      run: dotnet nuget push "**/*.nupkg" -k ${{ secrets.NUGET_TOKEN }} -s https://api.nuget.org/v3/index.json
