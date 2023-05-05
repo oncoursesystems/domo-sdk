@@ -1,8 +1,16 @@
 version: 2
 updates:
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: monday
+    time: "12:00"
+    timezone: "America/New_York"
 - package-ecosystem: nuget
   directory: "/"
   schedule:
-    interval: monthly
-    time: "00:00"
-  open-pull-requests-limit: 10
+    interval: weekly
+    day: monday
+    time: "12:00"
+    timezone: "America/New_York"

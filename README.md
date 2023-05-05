@@ -1,13 +1,21 @@
-# Domo API SDK - .NET Standard 2.0
+<div align="center">
+# Domo API SDK 
+</div>
+
+<div align="center">
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://github.com/oncoursesystems/domo-sdk/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/oncoursesystems/domo-sdk/actions/workflows/ci.yml) 
+[![NuGet Version](https://img.shields.io/nuget/v/OnCourse.Domo)](https://www.nuget.org/packages/OnCourse.Domo/) 
+</div>
 
 Domo API library helps to generate requests for following services:
 
  * groups
  * users
  * datasets
+ * pages
  * accounts*
  * activity*
- * pages
  * streams*
  * projects and tasks*
 
@@ -22,7 +30,8 @@ This project is a class library built for compatibility with .NET Standard 2.0. 
 
 To install the Domo NuGet package, run the following command in the Package Manager Console
 ```
-PM> Install-Package Domo
+PM> Install-Package OnCourse.Domo
+```
 
 ## General Usage
 
