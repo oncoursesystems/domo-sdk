@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Domo.Pages
+namespace OnCourse.Domo.Pages
 {
     /// <summary>
     /// https://developer.domo.com/docs/page-api-reference/page

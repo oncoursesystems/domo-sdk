@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Domo.Pages
+namespace OnCourse.Domo.Pages
 {
     public class Page : DomoModel
     {

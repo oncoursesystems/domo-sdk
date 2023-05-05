@@ -5,12 +5,12 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Domo.Users
+namespace OnCourse.Domo.Users
 {
     public class UserClient : IUserClient
     {
-        private DomoHttpClient _domoHttpClient;
-        private JsonSerializerOptions _serializerOptions;
+        private readonly DomoHttpClient _domoHttpClient;
+        private readonly JsonSerializerOptions _serializerOptions;
 
         public UserClient(IDomoConfig config)
         {
@@ -24,9 +24,9 @@ namespace Domo.Users
         }
 
         /// <summary>
-        /// Retreives a given Domo User by User Id
+        /// Retrieves a given Domo User by User Id
         /// </summary>
-        /// <param name="userId">Id of user to retreive</param>
+        /// <param name="userId">Id of user to retrieve</param>
         /// <returns>Returns a Domo User. <see cref="Domo.Users.User"/></returns>
         public async Task<User> RetrieveUserAsync(long userId)
         {
@@ -60,7 +60,7 @@ namespace Domo.Users
         /// </summary>
         /// <param name="userId">Id of Domo User to Update.</param>
         /// <param name="user">Domo User Info to update to.</param>
-        /// <returns>Returns a bool of whether the Domo User was succesfully updated.</returns>
+        /// <returns>Returns a bool of whether the Domo User was successfully updated.</returns>
         public async Task<bool> UpdateUserAsync(long userId, User user)
         {
             string userUri = $"v1/users/{userId}";
@@ -86,7 +86,7 @@ namespace Domo.Users
         }
 
         /// <summary>
-        /// Retreive a list of users up to the specified limit, starting at a given offset
+        /// Retrieve a list of users up to the specified limit, starting at a given offset
         /// </summary>
         /// <param name="limit">Max number of users to return. Maximum amount of users to return is 500.</param>
         /// <param name="offset">Offset of users to begin the list of users from.</param>

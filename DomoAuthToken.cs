@@ -1,7 +1,7 @@
 using System;
 using System.Text.Json.Serialization;
 
-namespace Domo
+namespace OnCourse.Domo
 {
     public class DomoAuthToken
     {

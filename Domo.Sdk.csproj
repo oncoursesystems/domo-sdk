@@ -4,6 +4,7 @@
     <PackageId>Domo</PackageId>
     <Authors>OnCourse Systems For Education</Authors>
     <Description>Domo API Client</Description>
+    <RepositoryUrl>https://github.com/oncoursesystems/domo-sdk</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="4.6.0"/>

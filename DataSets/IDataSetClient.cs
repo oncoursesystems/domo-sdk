@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Domo.DataSets
+namespace OnCourse.Domo.DataSets
 {
     public interface IDataSetClient
     {

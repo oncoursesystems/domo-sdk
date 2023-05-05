@@ -5,12 +5,12 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Domo.Pages
+namespace OnCourse.Domo.Pages
 {
     public class PageClient : IPageClient
     {
-        private DomoHttpClient _domoHttpClient;
-        private JsonSerializerOptions _serializerOptions;
+        private readonly DomoHttpClient _domoHttpClient;
+        private readonly JsonSerializerOptions _serializerOptions;
 
         public PageClient(IDomoConfig config)
         {
@@ -101,7 +101,7 @@ namespace Domo.Pages
         }
 
         /// <summary>
-        /// Retrives a page collection from a page Id
+        /// Retrieves a page collection from a page Id
         /// </summary>
         /// <param name="pageId"></param>
         /// <returns>Page collection information</returns>

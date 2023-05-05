@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Domo.Users
+namespace OnCourse.Domo.Users
 {
     /// <summary>
     /// https://developer.domo.com/docs/users-api-reference/users-2
@@ -29,7 +29,7 @@ namespace Domo.Users
         /// </summary>
         /// <param name="userId">Id of Domo User to Update.</param>
         /// <param name="user">Domo User Info to update to.</param>
-        /// <returns>Returns a bool of whether the Domo User was succesfully updated.</returns>
+        /// <returns>Returns a bool of whether the Domo User was successfully updated.</returns>
         Task<bool> UpdateUserAsync(long userId, User user);
 
         /// <summary>

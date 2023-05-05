@@ -5,12 +5,13 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Domo.Groups
+namespace OnCourse.Domo.Groups
 {
     public class GroupClient : IGroupClient
     {
-        private DomoHttpClient _domoHttpClient;
-        private JsonSerializerOptions _serializerOptions;
+        private readonly DomoHttpClient _domoHttpClient;
+        private readonly JsonSerializerOptions _serializerOptions;
+        
         public GroupClient(IDomoConfig config)
         {
             _domoHttpClient = new DomoHttpClient(config);

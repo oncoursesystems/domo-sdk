@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Domo.DataSets
+namespace OnCourse.Domo.DataSets
 {
     public class DataSet
     {

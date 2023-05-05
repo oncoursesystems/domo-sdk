@@ -1,21 +1,18 @@
-using Domo.DataSets;
-using Domo.Groups;
-using Domo.Pages;
-using Domo.Users;
+using OnCourse.Domo.DataSets;
+using OnCourse.Domo.Groups;
+using OnCourse.Domo.Pages;
+using OnCourse.Domo.Users;
 
-namespace Domo
+namespace OnCourse.Domo
 {
     public class DomoClient
     {
-        private IDomoConfig _config { get; set; }
-
         public DomoClient(IDomoConfig config)
         {
-            _config = config;
-            Groups = new GroupClient(_config);
-            Users = new UserClient(_config);
-            DataSets = new DataSetClient(_config);
-            Pages = new PageClient(_config);
+            Groups = new GroupClient(config);
+            Users = new UserClient(config);
+            DataSets = new DataSetClient(config);
+            Pages = new PageClient(config);
         }
 
         public IGroupClient Groups { get; set; }

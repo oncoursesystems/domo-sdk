@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Domo.Groups;
 
-namespace Domo.Users
+namespace OnCourse.Domo.Users
 {
     public class User : DomoModel
     {

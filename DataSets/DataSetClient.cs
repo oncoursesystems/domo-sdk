@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Domo.DataSets
+namespace OnCourse.Domo.DataSets
 {
     public class DataSetClient : IDataSetClient
     {

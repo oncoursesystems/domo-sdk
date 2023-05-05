@@ -7,11 +7,11 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Domo
+namespace OnCourse.Domo
 {
     public class DomoHttpClient
     {
-        private IDomoConfig _config;
+        private readonly IDomoConfig _config;
         private DomoAuthToken _authToken;
 
         public HttpClient Client;

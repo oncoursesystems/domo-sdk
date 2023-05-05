@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Domo.Groups
+namespace OnCourse.Domo.Groups
 {
     public class Group : DomoModel
     {
