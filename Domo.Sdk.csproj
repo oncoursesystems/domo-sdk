@@ -14,8 +14,12 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>domo</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>domo.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="7.0.2"/>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="domo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
