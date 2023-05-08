@@ -1,22 +1,12 @@
-<div align="center">
-
-![Domo logo](domo.png)
+![Domo logo](https://raw.githubusercontent.com/oncoursesystems/domo-sdk/master/domo.png)
 
 # OnCourse.Domo
-
-</div>
-
-<div align="center">
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://github.com/oncoursesystems/domo-sdk/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/oncoursesystems/domo-sdk/actions/workflows/ci.yml)
 [![NuGet Version](https://img.shields.io/nuget/v/OnCourse.Domo)](https://www.nuget.org/packages/OnCourse.Domo/)
 
-</div>
-
 ### OnCourse.Domo is a .NET SDK library used to communicate with the Domo API
-
----
 
 ## ✔ Features
 This SDK supports the following [Domo platform (OAuth) APIs](https://developer.domo.com/portal/8ba9aedad3679-ap-is):
